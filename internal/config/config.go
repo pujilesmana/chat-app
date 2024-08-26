@@ -22,7 +22,7 @@ func LoadConfig() *Config {
 		log.Fatal("Error loading .env file")
 	}
 
-	config := &Config{
+	return &Config{
 		DBHost:     os.Getenv("DB_HOST"),
 		DBPort:     os.Getenv("DB_PORT"),
 		DBUsername: os.Getenv("DB_USERNAME"),
@@ -31,6 +31,4 @@ func LoadConfig() *Config {
 		BaseURL:    os.Getenv("BASE_URL"),
 		AppPort:    os.Getenv("APP_PORT"),
 	}
-
-	return config
 }
